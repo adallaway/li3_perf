@@ -13,7 +13,7 @@ foreach($vars['view'] as $k => $v)
 {
   echo '<span class="li3-perf-stat-value">$' . $k . '</span><br />';
   echo '<pre>';
-  Doctrine\Common\Util\Debug::dump($v, 1, false);
+  //Doctrine\Common\Util\Debug::dump($v, 1, false);
   echo '</pre>';
 }
 ?>
