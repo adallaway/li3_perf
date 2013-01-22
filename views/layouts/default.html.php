@@ -15,16 +15,6 @@ $styles = array
   '/li3_perf/css/ccze.css'
 );
 
-/*
- * I put this fix here because Lithium can't seem to get the webroot right for libraries.
- * TODO: We need to fix that at some point. - Alex
- */
-
-$lib_webroot = (strpos($_SERVER['REQUEST_URI'], 'lithium-testing/') != -1) ? '/lithium-testing' : '';
-
-foreach($scripts as &$script) $script = $lib_webroot.$script;
-foreach($styles as &$style) $style = $lib_webroot.$style;
-
 echo $this->html->script($scripts);
 echo $this->html->style($styles);
 echo $this->content();

@@ -104,7 +104,8 @@ Dispatcher::applyFilter('run', function($self, $params, $chain) {
 			'paths' => array(
 				'template' => '{:library}/views/elements/{:template}.{:type}.php',
 				'layout'   => '{:library}/views/layouts/{:layout}.{:type}.php',
-			)
+			),
+		  'request' => $params['request'] // <- SEE HERE
 		));
 		$toolbar = $View->render('all',
 			array(
