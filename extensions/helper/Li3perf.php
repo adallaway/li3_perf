@@ -6,12 +6,10 @@ class Li3perf extends \lithium\template\helper\Html {
 	public function printVars($var) {
 		$html = "<pre>";
 
-		if (@is_array($var)) {
-			$html .= var_dump($var);
-		} else {
-			$html .= $var;
-		}
-
+		ob_start();
+		//\Doctrine\Common\Util\Debug::dump($var, 1);
+    $html .= ob_end_flush();
+    
 		$html .= "</pre>";
 
 		return $html;

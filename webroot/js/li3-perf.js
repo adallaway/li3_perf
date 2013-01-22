@@ -1,5 +1,11 @@
-$(document).ready(function() { 
-	
+$(document).ready(function()
+{ 
+  /*
+   * I put this fix here because Lithium can't seem to get the webroot right for libraries.
+   * TODO: We need to fix that at some point. - Alex
+   */
+  var lib_webroot = (window.location.href.indexOf('lithium-testing/') != -1) ? '/lithium-testing' : '';
+  
 	// Minimze toolbar
 	$('#lp-minimize').click(function() {
 		toolbarCollapse();
@@ -45,12 +51,12 @@ $(document).ready(function() {
 		$('#li3-perf-log').show();
 		$('#li3-perf-log div').show();
 		
-		$.get('/li3_perf/tail', function(data){
+		$.get(lib_webroot + '/li3_perf/tail', function(data){
 			$('#error-log').html(data);
 		});
 	});
 	
-	$.get('/li3_perf/tail', function(data){
+	$.get(lib_webroot + '/li3_perf/tail', function(data){
 		$('#error-log').html(data);
 	});
 	
