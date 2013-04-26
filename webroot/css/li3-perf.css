@@ -28,15 +28,16 @@ html {
 
 #li3-perf-content
 {
-	padding: 20px;
+	padding: 10px;
 	background-color: #EEEEEE;
 	color: #000000;
 }
 
 #li3-perf-content h2 {
-	/*color: #FF59FF;*/
 	color: #00a5f5;
 	font-size: 14px;
+	border-bottom: 1px solid #CCCCCC;
+	margin: 0px;
 }
 
 #li3-perf-toolbar-links {
@@ -73,4 +74,10 @@ span.li3-perf-stat-value {
 	font-weight: bold;
 	font-size: 14px;
 	color: #FF59FF;
+}
+
+#li3-perf-queries table tr
+{
+  border: 1px solid #C9C2C2;
+  background-color: #FFFFFF;
 }

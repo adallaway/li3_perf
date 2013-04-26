@@ -16,7 +16,7 @@ foreach($queries as $query)
 ?>
   <tr>
     <td>Ms: <?= round($query['explain']['millis'], 2); ?>ms</td>
-    <td>Params: <?= var_dump($query['params'], true); ?></td>
+    <td>Params: <?= print_r($query['params'], true); ?></td>
     <td>Types: <?= implode(', ', $query['types']); ?></td>
   </tr>
   <tr>
