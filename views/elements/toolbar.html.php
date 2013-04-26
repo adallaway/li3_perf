@@ -16,7 +16,7 @@
 			
 			<?=$this->html->link('Log', '#', array('id' => 'lp-log', 'class' => 'li3-perf-link', 'escape' => false)); ?>
 
-			<?=$this->html->link('[ X ]', '#', array('id' => 'lp-minimize', 'class' => 'li3-perf-link', 'escape' => false, 'style' => 'margin-top: 4px;')); ?>
+			<?=$this->html->link('[ X ]', '#', array('id' => 'lp-minimize', 'class' => 'li3-perf-link', 'escape' => false)); ?>
 		</div>
 		
 		<div id="li3-perf-content">

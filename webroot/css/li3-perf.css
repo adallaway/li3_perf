@@ -9,14 +9,12 @@ html {
 	padding-top: 24px !important;
 }
 #li3-perf-toolbar {
-	background: url('../img/97bg.png') repeat;
 	color: #fff;
 	width: 100%;
 	height: 24px;
 	display: block;
 	position: relative;
 	top: 0;
-	z-index: 1000;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
@@ -25,11 +23,14 @@ html {
 
 #li3-perf-toolbar-content-wrapper {
 	padding: 4px;
-	background: url('../img/97bg.png') repeat;
+	background-color: #AAAAAA;
 }
 
-#li3-perf-content {
+#li3-perf-content
+{
 	padding: 20px;
+	background-color: #EEEEEE;
+	color: #000000;
 }
 
 #li3-perf-content h2 {

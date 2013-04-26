@@ -7,8 +7,9 @@ class Li3perf extends \lithium\template\helper\Html {
 		$html = "<pre>";
 
 		ob_start();
-		//\Doctrine\Common\Util\Debug::dump($var, 1);
-    $html .= ob_end_flush();
+		\Doctrine\Common\Util\Debug::dump($var, 1);
+    $html .= ob_get_contents();
+    ob_end_clean();
     
 		$html .= "</pre>";
 
