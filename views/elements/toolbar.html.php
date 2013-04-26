@@ -6,12 +6,12 @@
 		Mem. Usage: <?= $this->li3perf->byteSize(memory_get_usage(true)) . ' / ' . ini_get('memory_limit'); ?>
 
 		<div id="li3-perf-toolbar-links">
-		  <a href="#" id="lp-queries" class="li3-perf-link">Queries</a>
-		  <a href="#" id="lp-perf-graph" class="li3-perf-link">Graph</a>
-		  <a href="#" id="lp-timing" class="li3-perf-link">Time</a>
-		  <a href="#" id="lp-variables" class="li3-perf-link">Vars</a>
-		  <a href="#" id="lp-log" class="li3-perf-link">Log</a>
-		  <a href="#" id="lp-minimize" class="li3-perf-link">[ X ]</a>
+		  <a href="#" id="lp-queries" class="li3-perf-link" onclick="return false;">Queries</a>
+		  <a href="#" id="lp-perf-graph" class="li3-perf-link" onclick="return false;">Graph</a>
+		  <a href="#" id="lp-timing" class="li3-perf-link" onclick="return false;">Time</a>
+		  <a href="#" id="lp-variables" class="li3-perf-link" onclick="return false;">Vars</a>
+		  <a href="#" id="lp-log" class="li3-perf-link" onclick="return false;">Log</a>
+		  <a href="#" id="lp-minimize" class="li3-perf-link" onclick="return false;">[ X ]</a>
 		</div>
 		
 		<div id="li3-perf-content">
