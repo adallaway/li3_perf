@@ -50,7 +50,7 @@ $(document).ready(function()
 		});
 	});
 	
-	$.get('/li3_perf/tail', function(data){
+	$.get('/li3_perf/tail?li3_perf', function(data){
 		$('#error-log').html(data);
 	});
 	
