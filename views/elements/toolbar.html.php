@@ -3,7 +3,7 @@
 	
 		Execution Time: <?= number_format($timers['complete_load'], 2) . 's'; ?>
 
-		Mem. Usage: <?= $this->li3perf->byteSize(memory_get_usage(true)) . ' / ' . ini_get('memory_limit'); ?>
+		Mem. Usage: <?= $this->li3perf->byteSize(memory_get_usage(true)) . ' / ' . ini_get('memory_limit'); ?> Peak: <?= $this->li3perf->byteSize(memory_get_peak_usage(true)); ?>
 
 		<div id="li3-perf-toolbar-links">
 		  <a href="#" id="lp-queries" class="li3-perf-link" onclick="return false;">Queries</a>
