@@ -13,6 +13,14 @@ foreach($queries as $query)
 <?php
 foreach($queries as $query)
 {
+  if(isset($_GET['full']))
+  {
+    $sql = li3_perf\extensions\util\SqlFormatter::format($query['sql']);
+  }
+  else
+  {
+    $sql = li3_perf\extensions\util\SqlFormatter::highlight($query['sql']);
+  }
 ?>
   <tr>
     <td>Ms: <?= round($query['explain']['millis'], 2); ?>ms</td>
@@ -21,7 +29,7 @@ foreach($queries as $query)
   </tr>
   <tr>
     <td colspan="3">
-      <?= $query['sql']; ?>
+      <?php echo $sql; ?>
     </td>
   </tr>
 <?php

@@ -81,3 +81,22 @@ span.li3-perf-stat-value {
   border: 1px solid #C9C2C2;
   background-color: #FFFFFF;
 }
+
+#li3-perf-queries table tr td
+{
+  font-size: 10px;
+  padding: 2px;
+  padding-bottom: 10px;
+}
+
+#li3-perf-queries table tr:nth-of-type(odd) td
+{
+  background-color: #6087B0;
+  color: #FFFFFF;
+  padding-bottom: 2px;
+}
+
+#li3-perf-queries table tr td pre
+{
+  white-space: pre-wrap;
+}
