@@ -30,6 +30,7 @@ foreach($queries as $key => $query)
 
 foreach($queries as $key => $query)
 {
+  
   $longest_query_index = (array_search($key, $longest_query_keys) + 1);
   $longest_query_percentage = round(($query['explain']['millis'] / $total_ms) * 100, 2);
   if(isset($_GET['full']))
@@ -47,9 +48,38 @@ foreach($queries as $key => $query)
     <td>Types: <?= implode(', ', $query['types']); ?></td>
     <td>Time Index: <?= $longest_query_index; ?></td>
     <td>% Time: <?= $longest_query_percentage; ?>%</td>
+    <td>Source: <?= $query['source']; ?></td>
   </tr>
   <tr>
-    <td colspan="5">
+    <td colspan="6">
+      <?php
+      if(isset($_GET['btrace']))
+      {
+        echo '<pre>';
+        $limit = is_numeric($_GET['btrace']) ? $_GET['btrace'] : 10;
+        $trace = '';
+        $found_first = true;
+        $skipped = 0;
+        foreach($query['btrace'] as $k => $v)
+        {
+          if(!$found_first)
+          {
+            if(isset($v['file']) && stripos($v['file'], 'resources') !== false)
+            {
+              $found_first = true;
+              $skipped = ($k - 1);
+            }
+            else continue;
+          }
+          if($k > $limit) break;
+          $v['args'] = array();
+          //array_walk($v['args'], function (&$item, $key) { $item = var_export($item, true);});
+          $trace .= '#' . ($k - $skipped) . ' ' . @$v['file'] . '(' . @$v['line'] . '): ' . (isset($v['class']) ? $v['class'] . '->' : '') . $v['function'] . '(' . implode(', ', $v['args']) . ')' . "\n";
+        }
+        echo $trace;
+        echo '</pre>';
+      }
+      ?>
       <?php echo $sql; ?>
     </td>
   </tr>

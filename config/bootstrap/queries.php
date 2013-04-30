@@ -14,9 +14,10 @@ Dispatcher::applyFilter('_callable', function($self, $params, $chain)
   	{
   	  $query = array
   	  (
-  		'time' => microtime(true),
-  		'explain' => $result->result()->resource()->explain(),
-  		'query' => $result->result()->resource()->info()
+  		  'time' => microtime(true),
+  		  'explain' => $result->result()->resource()->explain(),
+  		  'query' => $result->result()->resource()->info(),
+  		  'source' => 'foobar'
   	  );
   	  Data::append('queries', array($query));
   	}

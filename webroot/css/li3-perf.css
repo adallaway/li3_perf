@@ -34,6 +34,11 @@
 	display: none;
 }
 
+#li3-perf-content > div
+{
+  display: none;
+}
+
 #li3-perf-content h2 {
 	color: #00a5f5;
 	font-size: 14px !important;
@@ -122,4 +127,9 @@ span.li3-perf-stat-value {
   white-space: pre-wrap !important;
   font-size: 11px !important;
   font-family: Monaco,Menlo,Consolas,"Courier New",monospace !important;
+  background-color: #F5F5F5;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px 4px 4px 4px;
+  padding: 5px;
+  margin-bottom: 2px;
 }
