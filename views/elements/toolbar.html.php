@@ -72,7 +72,8 @@
 			
 			<div id="li3-perf-log">
 				<h2>Application Log</h2>
-				<div id="error-log"></div>
+				<a href="" onclick="li3_perf_getErrorLog(); return false;" onfocus="blur();">Update Tail</a>
+				<div id="li3-perf-log-output"></div>
 			</div>
 		</div>
 	</div>
