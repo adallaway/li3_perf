@@ -76,6 +76,10 @@ span.li3-perf-stat-value {
 	color: #FF59FF;
 }
 
+#li3-perf-queries table
+{
+  width: 100%;
+}
 #li3-perf-queries table tr
 {
   border: 1px solid #C9C2C2;
@@ -99,4 +103,5 @@ span.li3-perf-stat-value {
 #li3-perf-queries table tr td pre
 {
   white-space: pre-wrap;
+  font-size: 10px;
 }

@@ -11,8 +11,27 @@ foreach($queries as $query)
 
 <table>
 <?php
-foreach($queries as $query)
+$longest_queries = $queries;
+uasort($longest_queries, function($ao, $bo)
 {
+  $a = floatval($ao['explain']['millis']);
+  $b = floatval($bo['explain']['millis']);
+  if ($a == $b) return 0;
+  return ($a < $b) ? -1 : 1;
+});
+$longest_query_keys = array_keys(array_reverse($longest_queries, true));
+$queries_count = count($queries);
+
+$total_ms = 0;
+foreach($queries as $key => $query)
+{
+  $total_ms += floatval($query['explain']['millis']);
+}
+
+foreach($queries as $key => $query)
+{
+  $longest_query_index = (array_search($key, $longest_query_keys) + 1);
+  $longest_query_percentage = round(($query['explain']['millis'] / $total_ms) * 100, 2);
   if(isset($_GET['full']))
   {
     $sql = li3_perf\extensions\util\SqlFormatter::format($query['sql']);
@@ -26,9 +45,11 @@ foreach($queries as $query)
     <td>Ms: <?= round($query['explain']['millis'], 2); ?>ms</td>
     <td>Params: <?= print_r($query['params'], true); ?></td>
     <td>Types: <?= implode(', ', $query['types']); ?></td>
+    <td>Time Index: <?= $longest_query_index; ?></td>
+    <td>% Time: <?= $longest_query_percentage; ?>%</td>
   </tr>
   <tr>
-    <td colspan="3">
+    <td colspan="5">
       <?php echo $sql; ?>
     </td>
   </tr>
