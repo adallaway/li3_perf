@@ -12,6 +12,7 @@ $variable_size = $this->li3perf->byteSize($this->li3perf->varSize($vars['view'])
 foreach($vars['view'] as $k => $v)
 {
   echo '<span class="li3-perf-stat-value">$' . $k . '</span><br />';
-  echo $this->li3perf->printVars($v);
+  echo 'Turned off temporarily.';
+  //echo $this->li3perf->printVars($v);
 }
 ?>
