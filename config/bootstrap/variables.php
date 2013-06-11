@@ -2,6 +2,7 @@
 use lithium\net\http\Media;
 use li3_perf\extensions\util\Data;
 
+/*
 // Apply a filter that will gather all the variables available to the view template.
 Media::applyFilter('render', function($self, $params, $chain) {
 	
@@ -20,4 +21,5 @@ Media::applyFilter('render', function($self, $params, $chain) {
 	Data::append('timers', array('_filter_for_variables' => microtime(true) - $filter_start));
 	return $chain->next($self, $params, $chain);
 });
+*/
 ?>
